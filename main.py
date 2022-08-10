@@ -28,3 +28,6 @@ def calculate():
     tension_acting = acting_tension(thickness, inertia, moment)
     performance_values = performance_function(tensions_admissible, tension_acting)
     return render_template('calculate.html', result=failure_probability(performance_values))
+
+if __name__ == '__main__':
+    app.run()
