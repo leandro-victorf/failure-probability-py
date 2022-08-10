@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST" action="/calculate">
+    <label for="envergadura_id">
+        Envergadura:
+        <input type="number" step="0.01" name="Envergadura" placeholder="m" id="envergadura_id" required />
+    </label>
+    <label for="corda_id">
+        Corda:
+        <input type="number" step="0.01" name="Corda" placeholder="m" id="corda_id" required/>
+    </label>
+    <label for="espessura_id">
+        Espessura:
+        <input type="number" step="0.01" name="Espessura" placeholder="m" id="espessura_id" required/>
+    </label>
+    <label for="peso_id">
+        Peso:
+        <input type="number" step="0.01" name="Peso" placeholder="N" id="peso_id" required/>
+    </label>
+    <label for="limite_id">
+        Limite de escoamento:
+        <input type="number" step="0.01" name="Limite" placeholder="N/m²" id="limite_id" required/>
+    </label>
+    <label for="forca_id">
+        Força:
+        <input type="number" step="0.01" name="Força" placeholder="N/m²" id="forca_id" required/>
+    </label>
+    <label>
+        <input type="submit" value="Submit">
+    </label>
+</form>
+{% endblock %}

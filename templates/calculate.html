@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Fator de segurança
+                </th>
+                <th>
+                    Probabilidade de Falha
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for security_factor, failure_probability in result %}
+                <tr>
+                    <td>
+                        {{security_factor}}
+                    </td>
+                    <td>
+                        {{failure_probability}}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

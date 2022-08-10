@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %} - FlaskApp</title>
+    <style>
+        h1 {
+            color: #d64161;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+            text-align: center;
+        }
+        label, input{
+            display: block;
+        }
+        .content {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            margin-bottom: 16px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        input{
+            border: 3px solid #bbb;
+            border-radius: 8px;
+            padding: 8px 16px;
+        }
+        input[type="submit"] {
+            background-color: blue;
+            color: white;
+            border: 0;
+            width: 100%;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Failure Probability
+    </h1>
+    <hr>
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>
