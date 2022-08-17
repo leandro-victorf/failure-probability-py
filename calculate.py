@@ -40,7 +40,7 @@ def failure_probability(performance_values):
     security_factor = 1.0
     for performance_value in performance_values:
         probability = function_gaussian(performance_value)
-        f_p = 1 - abs(probability)/iteration_constant
+        f_p = abs(probability)/iteration_constant
         values_failure_probability.append((round(security_factor, 1), round(f_p, 2)))
         security_factor += 0.1
 
