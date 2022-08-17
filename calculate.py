@@ -23,7 +23,7 @@ def moment_of_inertia(high, base):
 
 
 def acting_tension(thickness, inertia, moment):
-    return - moment * thickness / (2 * inertia)
+    return moment * thickness / (2 * inertia)
 
 
 def performance_function(admissible, acting):
@@ -40,7 +40,7 @@ def failure_probability(performance_values):
     security_factor = 1.0
     for performance_value in performance_values:
         probability = function_gaussian(performance_value)
-        f_p = abs(probability)
+        f_p = abs(probability)/1000000/iteration_constant
         values_failure_probability.append((round(security_factor, 1), round(f_p, 2)))
         security_factor += 0.1
 
@@ -56,5 +56,4 @@ def function_gaussian(performance):
         values.append(value)
         if value < 0.0:
             probability += value
-    plt.hist(values, bins=200)
     return probability
