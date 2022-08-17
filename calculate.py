@@ -40,7 +40,7 @@ def failure_probability(performance_values):
     security_factor = 1.0
     for performance_value in performance_values:
         probability = function_gaussian(performance_value)
-        f_p = abs(probability)/iteration_constant
+        f_p = abs(probability)*100/iteration_constant
         values_failure_probability.append((round(security_factor, 1), round(f_p, 2)))
         security_factor += 0.1
 
@@ -50,11 +50,11 @@ def failure_probability(performance_values):
 def function_gaussian(performance):
     values = []
     sigma = 50
-    beta = 0.0
+    probability = 0.0
     for i in range(iteration_constant):
         value = random.gauss(performance, sigma)
         values.append(value)
         if value < 0.0:
-            beta += value
+            probability += value
     plt.hist(values, bins=200)
-    return beta
+    return probability
